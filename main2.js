@@ -1,4 +1,9 @@
-
+/* 
+1-Sistema de Procesamiento de notas de Estudiantes de un curso
+2-Busqueda por ID, 
+3-Filtros por el estado del Estudiante, 
+4-Reorganizacion de lista por orden de estados y promedios 
+*/
 
 // validacion de nombre
 const validarNombre = () => {
@@ -21,7 +26,6 @@ const validarNota = ( numero) => {
     }
     return numero;
 }
-
 
 const verificarEstado = ( valorPromedio) => {
     if( valorPromedio <4) {
@@ -54,7 +58,6 @@ let listaEstudiantes = [
     { id: 6, nombre: 'Claudio Perez', nota1: 2, nota2: 3, nota3: 5, promedio: 3.33, status: 'Desaprobado'},
 ];
 
-
 class Estudiante {
     constructor() {
         this.id = listaEstudiantes.length + 1;
@@ -70,11 +73,9 @@ class Estudiante {
     }
 }
 
-
 let cantidadEstudiantes;
 
 // Programa.
-
 
 do {
     cantidadEstudiantes = parseInt(prompt('Ingrese el número de estudiantes del curso'));
@@ -83,28 +84,10 @@ do {
     }
 } while (!validarTotalAlumnos(cantidadEstudiantes));
 
-
 for (let i = 1; i <= cantidadEstudiantes; i++) {
     const nuevoEstudiante = new Estudiante();
     listaEstudiantes.push(nuevoEstudiante);
-
 }
-
-// Agregar los nuevos estudiantes a la lista existente
-//listaEstudiantes = listaEstudiantes.concat(nuevoEstudiante);
-
-// Mostrar la lista de estudiantes
-
-
-/* do {
-    const nuevoEstudiante = new Estudiante();
-    listaEstudiantes.push( nuevoEstudiante);
-
-    const respuesta = prompt( 'Desea ingresar otro Estudiante? (SI/NO)').toLowerCase();
-    if( respuesta !== 'si' && respuesta !== 'si') {
-        break;
-    }
-} while ( true); */
 
 //Filtro por el estado del Estudiante.
 
@@ -125,3 +108,11 @@ console.log( 'Busqueda por ID del estudiante' + '\n' + 'Cantidad de Estudiantes:
 const estudianteBuscado = Estudiante.getEstudianteById(1);
 console.log( estudianteBuscado);
 
+// Reorganizacion de lista por orden de Estados.
+
+const top10 = listaEstudiantes.map( estudiante => estudiante).sort( ( a,b) => b.promedio - a.promedio);
+
+console.log( 'Top 10 de los Estudiantes');
+console.table( top10);
+
+//Fin.
