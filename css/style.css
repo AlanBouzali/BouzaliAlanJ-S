@@ -18,6 +18,10 @@ h1{
 h2{
     margin: 15px;
 }
+.addBtnEst{
+    display: flex;
+    justify-content: end;
+}
 .compiladorEstudiantes{
     margin: 15px;
 }
