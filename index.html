@@ -7,8 +7,6 @@
     
     <link rel="stylesheet" href="./css/style.css">
 
-    <!-- <script src="./main2.js" defer></script> -->
-
     <title>RegentStudents</title>
 
 </head>
@@ -42,7 +40,7 @@
                     </thead>
                     <tbody id="compiladorEstudiantes">
                         <tr>
-                            <th scope="row">1</th>
+                            <!-- <th scope="row">1</th>
                             <td>21655</td>
                             <td>Juarez Ignacio</td>
                             <td>8</td>
@@ -50,65 +48,50 @@
                             <td>7</td>
                             <td>6,67</td>
                             <td>Aprobado</td>
-                            </tr>
-                        <!-- <tr>
-                        <th scope="row">2</th>
-                        <td>25713</td>
-                        <td>Thorn Ruperth</td>
-                        <td>6</td>
-                        <td>2</td>
-                        <td>2</td>
-                        <td>3,33</td>
-                        <td>Desaprobado</td>
-                        </tr>
-                        <tr>
-                        <th scope="row">3</th>
-                        <td>36195</td>
-                        <td>Dolce Jaia</td>
-                        <td>8</td>
-                        <td>7</td>
-                        <td>9</td>
-                        <td>8</td>
-                        <td>Promocionado</td>
-                        </tr>
-                        <tr> -->
+                            </tr> -->
                     </tbody>
                 </table>
             </div>
+        </section>
 
-
-            <div id="myModal" class="modalContainer">
-                <div class="modalContent">
-                    <span>X</span>
-                    <h2>Agregar Estudiante</h2>
-                    <div class="nuevoEstudiante">
-                        <div class="row g-3">
-                            <div class="col">
-                                <input type="text" class="modalDNI" placeholder="Documento de Identidad">
-                            </div>
-                            <div class="col">
-                                <input type="text" class="modalNombre" placeholder="Apellido y Nombre">
-                            </div>
+        <div id="myModal" class="modalContainer">
+            <div class="modalContent">
+                <span class="close">X</span>
+                <h2>Agregar Estudiante</h2>
+                <div class="nuevoEstudiante">
+                    <div class="row g-3">
+                        <div class="col">
+                            <input type="text" id="modalDNI" placeholder="Documento de Identidad">
                         </div>
-                        <div class="row g-3">
-                            <div class="col">
-                                <input type="number" class="modalParcial1" placeholder="Documento de Identidad">
-                            </div>
-                            <div class="col">
-                                <input type="text" class="modalNombre" placeholder="Apellido y Nombre">
-                            </div>
-                            <div class="col">
-                                <input type="text" class="modalNombre" placeholder="Apellido y Nombre">
-                            </div>
+                        <div class="col">
+                            <input type="text" id="modalNombre" placeholder="Apellido y Nombre">
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col">
+                            <input type="number" id="modalParcial1" placeholder="Nota Primer Parcial">
+                        </div>
+                        <div class="col">
+                            <input type="number" id="modalParcial2" placeholder="Nota Segundo Parcial">
+                        </div>
+                        <div class="col">
+                            <input type="number" id="modalParcial3" placeholder="Nota Tercer Parcial">
                         </div>
                     </div>
                 </div>
+                <button id="btnModalAddEst"><span>Cargar nuevo Estudiante</span></button>
             </div>
-        </section>
+        </div>
 
 
     </main>
     
+    <footer>
+        <section>
+            <div class="redesSociales">Redes sociales IMG</div>
+            <div class="ubicacion">Direccion lleca 1234, BS AS</div>
+        </section>
+    </footer>
     <script type="module" src="./dbJS/estudiantes.js"></script>
     <script type="module" src="./dbJS/usuarios.js"></script>
     <script type="module" src="./js/inicio.js"></script>

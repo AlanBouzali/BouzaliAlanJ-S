@@ -10,6 +10,7 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
+    border-bottom: 1px solid black;
 }
 
 h1{
@@ -18,17 +19,66 @@ h1{
 h2{
     margin: 15px;
 }
+
+/* Boton agregar Estudiante */
 .addBtnEst{
     display: flex;
     justify-content: end;
 }
-.compiladorEstudiantes{
-    margin: 15px;
-}
 #btnModalAddEst{
-    margin: 15px;
+    margin: 25px;
     background-color: rgba(255, 255, 255, 0.623);
+}
+
+/* Ficha estudiantes */
+.table{
+    margin: 25px;
+
+}
+
+/* Modal Container */
+.modalContainer{
+    width: 80%;
+    height: auto;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+}
+.modalContainer .modalContent{
+    margin: auto;
+    padding: 25px;
+    background-color: rgba(199, 193, 193, 0.979);
+    border: 1px solid black;
+    width: 60%;
+}
+.modalContainer .close{
+    color: red;
+    float: right;
+    font-size: 26px;
+    font-weight: bold;
+}
+.modalContainer .close:hover, .close:focus{
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }
 input{
     margin: 20px;
+}
+/* Fin Modal Container */
+
+
+
+
+/* footer */
+footer{
+    width: 100%;
+    height: auto;
+    border-top: 1px solid black;
+}
+footer .redesSociales, .ubicacion{
+    margin: 25px;
 }
