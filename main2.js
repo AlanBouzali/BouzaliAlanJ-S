@@ -58,6 +58,8 @@ let listaEstudiantes = [
     { id: 6, nombre: 'Claudio Perez', nota1: 2, nota2: 3, nota3: 5, promedio: 3.33, status: 'Desaprobado'},
 ];
 
+
+
 class Estudiante {
     constructor() {
         this.id = listaEstudiantes.length + 1;
