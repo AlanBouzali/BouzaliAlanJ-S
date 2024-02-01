@@ -82,6 +82,7 @@ const modalParcial1 = document.getElementById('modalParcial1');
 const modalParcial2 = document.getElementById('modalParcial2');
 const modalParcial3 = document.getElementById('modalParcial3');
 
+
 agregaEstudiante.addEventListener('click', ( ) => {
     //validar dni.
     const validarDni =(dni) => {
@@ -114,9 +115,6 @@ agregaEstudiante.addEventListener('click', ( ) => {
         alert("Alguno de todos los campos no es válido.");
     }
 
-
-    console.log(dniEstudiante.value);
-    console.log(nombreEstudiante.value);
     /* let nuevoEstudiante = new EstudianteCreado ( validarDni(dniEstudiante.value), nombreEstudiante.value, Number(modalParcial1.value),Number(modalParcial2.value), Number(modalParcial3.value));
     estudiantesActuales.push(nuevoEstudiante)
     console.log( dniEstudiante.value.length);
@@ -134,9 +132,17 @@ agregaEstudiante.addEventListener('click', ( ) => {
 buscador.addEventListener( 'keyup', (e) => {
     
     const estudiantesFlitro = estudiantesActuales.filter((estudiante) => estudiante.nombre.toLowerCase().includes(e.target.value));
-    console.log( estudiantesFlitro);
+    estudiantesActuales = estudiantesFlitro;
+
+    if ( e.target.value !== ''){
+        generarListaEstudiantes( estudiantesFlitro);
+    } else {
+        estudiantesActuales = JSON.parse( localStorage.getItem( 'estudiantes'));
+        generarListaEstudiantes( estudiantesActuales);
+    }
+    //console.log( estudiantesFlitro);
 })
 
 
 console.log( modalParcial1.value,modalParcial2.value, modalParcial3.value)
-// Fin modal
+

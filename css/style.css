@@ -17,9 +17,12 @@ h1{
     background-color: 255, 255, 255, 0.623;
 }
 h2{
-    margin: 15px;
+    margin: 25px;
 }
-
+/* buscador */
+.buscador{
+    margin: 25px;
+}
 /* Boton agregar Estudiante */
 .addBtnEst{
     display: flex;
@@ -67,6 +70,14 @@ h2{
 }
 input{
     margin: 20px;
+}
+.textoAlerta{
+    display: none;
+    width: 80%;
+    border: 1px solid black;
+    padding: 20px;
+    margin: 20px;
+
 }
 /* Fin Modal Container */
 
