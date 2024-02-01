@@ -44,9 +44,6 @@ export class EstudianteCreado {
         this.nota3 = modalParcial3;
         this.promedio = (( this.nota1 + this.nota2 + this.nota3)/3).toFixed( 2);
         this.status = verificarEstado( this.promedio);
-        //console.log( typeof modalParcial1);
-        //console.log( this.id);
-        //console.log(this.dni);
     }
 }
 
@@ -115,18 +112,7 @@ agregaEstudiante.addEventListener('click', ( ) => {
         alert("Alguno de todos los campos no es válido.");
     }
 
-    /* let nuevoEstudiante = new EstudianteCreado ( validarDni(dniEstudiante.value), nombreEstudiante.value, Number(modalParcial1.value),Number(modalParcial2.value), Number(modalParcial3.value));
-    estudiantesActuales.push(nuevoEstudiante)
-    console.log( dniEstudiante.value.length);
-    console.log( typeof nombreEstudiante.value);//string
-    console.log( typeof modalParcial1);//string
-    console.log( typeof Number(modalParcial2.value));//number
-    console.log( typeof modalParcial3.value);//string   
 
-    localStorage.setItem("estudiantes",JSON.stringify(estudiantesActuales))
-    estudiantesActuales = JSON.parse( localStorage.getItem( 'estudiantes'));
-    console.log(estudiantesActuales);
-    generarListaEstudiantes( estudiantesActuales); */
 })
 
 buscador.addEventListener( 'keyup', (e) => {
@@ -140,7 +126,7 @@ buscador.addEventListener( 'keyup', (e) => {
         estudiantesActuales = JSON.parse( localStorage.getItem( 'estudiantes'));
         generarListaEstudiantes( estudiantesActuales);
     }
-    //console.log( estudiantesFlitro);
+    
 })
 
 
