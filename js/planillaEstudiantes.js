@@ -6,22 +6,13 @@ import { generarListaEstudiantes } from './inicio.js';
 let estudiantesActuales = JSON.parse( localStorage.getItem( 'estudiantes'));
 //buscador de estudiantes.
 const buscador = document.getElementById( 'buscadorInput');
+//filtrar lista
+const filtroEstados = document.getElementById( 'dropdownMenuLink')
+const filtProm = document.getElementById( 'filtProm');
+const filtAprov = document.getElementById( 'filtAprov');
+const filtDesap = document.getElementById( 'filtDesap');
+const noFlitro = document.getElementById( 'noFlitro');
 
-
-const validarNombre = () => {
-    if ( nombreEstudiante.length >=3) {
-        nombreEstudiante = true;
-    } else {
-        return false;
-        //console.log( 'Verifique el nombre del estudiante.')
-    }
-}
-
-const validarNota = ( numero) => {
-    if ( !(numero >= 1 && numero <= 10 && !isNaN( numero))) {
-        console.log( 'La nota ingresada no es válida.')
-    }
-}
 const verificarEstado = ( valorPromedio) => {
     if( valorPromedio <4) {
         return 'Desaprobado';
@@ -115,6 +106,7 @@ agregaEstudiante.addEventListener('click', ( ) => {
 
 })
 
+//Barra buscador.
 buscador.addEventListener( 'keyup', (e) => {
     
     const estudiantesFlitro = estudiantesActuales.filter((estudiante) => estudiante.nombre.toLowerCase().includes(e.target.value));
@@ -128,6 +120,26 @@ buscador.addEventListener( 'keyup', (e) => {
     }
     
 })
+
+//filtrar lista.
+filtProm.addEventListener( 'click', (e) => {
+    const estudiantesPromocionados = estudiantesActuales.filter((estudiante) => estudiante.status === 'Promocionado');
+    generarListaEstudiantes(estudiantesPromocionados);
+});
+filtAprov.addEventListener( 'click', (e) => {
+    const estudiantesAprobados = estudiantesActuales.filter((estudiante) => estudiante.status === 'Aprobado');
+    generarListaEstudiantes( estudiantesAprobados);
+})
+filtDesap.addEventListener( 'click', (e) => {
+    const estudiantesDesaprobados = estudiantesActuales.filter((estudiante) => estudiante.status === 'Desaprobado');
+    generarListaEstudiantes( estudiantesDesaprobados);
+})
+noFlitro.addEventListener( 'click', (e) => {
+    const sinFiltro = estudiantesActuales;
+    generarListaEstudiantes( sinFiltro);
+})
+
+
 
 
 console.log( modalParcial1.value,modalParcial2.value, modalParcial3.value)

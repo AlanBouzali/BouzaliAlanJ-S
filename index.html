@@ -14,7 +14,7 @@
     <header>
         <div id="divRegistrer">
             <button></button>
-            
+
         </div>
         <img src="./assets/img/logoInstit.png" alt="Logo Instituto">
         <h1> Nombre del Instituto </h1>
@@ -23,13 +23,25 @@
     <main>
         <h2>Lista de estudiantes</h2>
 
-        <section id="listaDeEstudiantes">
+        <section id="listaDeEstudiantes" class="divDeFiltrado">
             <div class="addBtnEst">
                 <button id="btnModalAddEst"><img src="./assets/img/AddEstud.png" alt="Add Estudiante"><span>Estudiante</span></button>
             </div>
             <div class="buscador">
                 <label for="buscadorInput">Buscar Estudiante</label>
                 <input type="text" id="buscadorInput">
+            </div>
+            <div class="dropdown">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    Filtrar por Estados
+                </a>
+                
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li><a id="filtProm" class="dropdown-item" href="#">Promocionados</a></li>
+                    <li><a id="filtAprov" class="dropdown-item" href="#">Aprobados</a></li>
+                    <li><a id="filtDesap" class="dropdown-item" href="#">Desaprobado</a></li>
+                    <li><a id="noFlitro" class="dropdown-item" href="#">Quitar filtros</a></li>
+                </ul>
             </div>
 
             <div class="tablaEstudiantes">
