@@ -24,9 +24,6 @@
         <h2>Lista de estudiantes</h2>
 
         <section id="listaDeEstudiantes" class="divDeFiltrado">
-            <div class="addBtnEst">
-                <button id="btnModalAddEst"><img src="./assets/img/AddEstud.png" alt="Add Estudiante"><span>Estudiante</span></button>
-            </div>
             <div class="buscador">
                 <label for="buscadorInput">Buscar Estudiante</label>
                 <input type="text" id="buscadorInput">
@@ -35,6 +32,9 @@
                 <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                     Filtrar por Estados
                 </a>
+                <div class="addBtnEst">
+                    <button id="btnModalAddEst"><img src="./assets/img/AddEstud.png" alt="Add Estudiante"><span>Estudiante</span></button>
+                </div>
                 
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                     <li><a id="filtProm" class="dropdown-item" href="#">Promocionados</a></li>
@@ -89,7 +89,7 @@
                     </div>
                 </div>
                 <button id="btnAddEst"><span>Cargar nuevo Estudiante</span></button>
-                <p id="textoAlerta" class="textoAlerta">Alguno de los campos no es válido. Verifique que el DNI contenga 6 digitos, que el nombre esté compuesto por lo menos de 3 letras y que las notas esten comprendidas en el rango de 1 a 10.</p>
+                <p id="textoAlerta" class="textoAlerta">Alguno de los campos no es válido. <br>1- Verifique que el DNI contenga 6 digitos. <br> 2- Que el nombre esté compuesto por lo menos de 3 letras. <br> 3- Que las notas esten comprendidas en el rango de 1 a 10.</p>
             </div>
         </div>
 

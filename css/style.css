@@ -19,9 +19,38 @@ h1{
 h2{
     margin: 25px;
 }
-/* buscador */
-.buscador{
+/* seccion de filtrado */
+
+.divDeFiltrado .addBtnEst{
+    width: 100%;
+    height: auto;
+    padding: 25PX;
+}
+.divDeFiltrado .buscador{
+    width: auto;
+    height: auto;
     margin: 25px;
+}
+.divDeFiltrado .dropdown{
+    width: auto;
+    height: auto;
+    margin-left: 25px;
+}
+.divDeFiltrado .tablaEstudiantes{
+    width: auto;
+    height: auto;
+    /* grid-row: 2/2;
+    grid-column: 1/2;
+    justify-items: center; */
+} */
+
+/* .divDeFiltrado .addBtnEst button{
+    margin: 25px 0 100px 0;
+} */
+
+/* boton de filtro */
+.dropdown{
+    margin-top: 25px;
 }
 /* Boton agregar Estudiante */
 .addBtnEst{

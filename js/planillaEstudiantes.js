@@ -7,7 +7,7 @@ let estudiantesActuales = JSON.parse( localStorage.getItem( 'estudiantes'));
 //buscador de estudiantes.
 const buscador = document.getElementById( 'buscadorInput');
 //filtrar lista
-const filtroEstados = document.getElementById( 'dropdownMenuLink')
+//const filtroEstados = document.getElementById( 'dropdownMenuLink')
 const filtProm = document.getElementById( 'filtProm');
 const filtAprov = document.getElementById( 'filtAprov');
 const filtDesap = document.getElementById( 'filtDesap');
@@ -41,6 +41,14 @@ export class EstudianteCreado {
 
 //Modal para cargar Estudiantes.
 
+const agregaEstudiante = document.getElementById( 'btnAddEst');
+const dniEstudiante = document.getElementById('modalDNI');
+const nombreEstudiante = document.getElementById('modalNombre');
+const modalParcial1 = document.getElementById('modalParcial1');
+const modalParcial2 = document.getElementById('modalParcial2');
+const modalParcial3 = document.getElementById('modalParcial3');
+const textoAlerta = document.getElementById( 'textoAlerta');
+
 if ( document.getElementById( 'btnModalAddEst')) {
 
     let modal = document.getElementById( 'myModal');
@@ -60,18 +68,11 @@ if ( document.getElementById( 'btnModalAddEst')) {
         body.style.position = 'inherit';
         body.style.height = 'auto';
         body.style.overflow = 'visible';
-    } 
+    }
 } 
 
-const agregaEstudiante = document.getElementById( 'btnAddEst');
-const dniEstudiante = document.getElementById('modalDNI');
-const nombreEstudiante = document.getElementById('modalNombre');
-const modalParcial1 = document.getElementById('modalParcial1');
-const modalParcial2 = document.getElementById('modalParcial2');
-const modalParcial3 = document.getElementById('modalParcial3');
 
-
-agregaEstudiante.addEventListener('click', ( ) => {
+agregaEstudiante.addEventListener('click', (e) => {
     //validar dni.
     const validarDni =(dni) => {
         if ( dni.length===6 && !isNaN(dni)) {
@@ -89,6 +90,7 @@ agregaEstudiante.addEventListener('click', ( ) => {
     }
     if (validarDni(dniEstudiante.value) && validarNombre(nombreEstudiante.value) && validarNotas(Number(modalParcial1.value)) && validarNotas(Number(modalParcial2.value)) && validarNotas(Number(modalParcial3.value))) {
         let nuevoEstudiante = new EstudianteCreado ( dniEstudiante.value, nombreEstudiante.value, Number(modalParcial1.value),Number(modalParcial2.value), Number(modalParcial3.value));
+        textoAlerta.style.display = 'none';
         estudiantesActuales.push(nuevoEstudiante);
         localStorage.setItem("estudiantes",JSON.stringify(estudiantesActuales));
         estudiantesActuales = JSON.parse( localStorage.getItem( 'estudiantes'));
@@ -100,11 +102,14 @@ agregaEstudiante.addEventListener('click', ( ) => {
         modalParcial2.value = '';
         modalParcial3.value = '';
     } else {
-        alert("Alguno de todos los campos no es válido.");
+        textoAlerta.style.display = 'block';
+        //alert("Alguno de todos los campos no es válido.");
     }
-
-
+    console.log( agregaEstudiante);
+    console.log( typeof agregaEstudiante);
+    console.log( e);
 })
+//fin modal.
 
 //Barra buscador.
 buscador.addEventListener( 'keyup', (e) => {
@@ -118,7 +123,7 @@ buscador.addEventListener( 'keyup', (e) => {
         estudiantesActuales = JSON.parse( localStorage.getItem( 'estudiantes'));
         generarListaEstudiantes( estudiantesActuales);
     }
-    
+    console.log( buscador);
 })
 
 //filtrar lista.
