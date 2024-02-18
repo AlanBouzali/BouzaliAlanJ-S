@@ -2,9 +2,13 @@ import { estudiantesExistentes } from './inicio.js';
 import { generarListaEstudiantes } from './inicio.js';
 
 
+let estudiantesActuales;
 
-let estudiantesActuales = JSON.parse( localStorage.getItem( 'estudiantes'));
+setTimeout(() => {
+    estudiantesActuales = JSON.parse( localStorage.getItem( 'estudiantes'));
+}, 3000);
 
+console.log(estudiantesActuales);
 
 //buscador de estudiantes.
 const buscador = document.getElementById( 'buscadorInput');
@@ -104,7 +108,7 @@ agregaEstudiante.addEventListener('click', (e) => {
 
         Toastify({
             text: "Cargando estudiante...",
-            duration: 3000
+            duration: 2000
             }).showToast();
 
     } else {

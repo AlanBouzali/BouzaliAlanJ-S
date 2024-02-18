@@ -19,6 +19,7 @@ fetch('../data/data.json')
 .then(data => {
     estudiantes = data;
     JSON.parse( localStorage.getItem( 'estudiantes')) || localStorage.setItem( 'estudiantes', JSON.stringify(estudiantes));
+    
 })
 
 

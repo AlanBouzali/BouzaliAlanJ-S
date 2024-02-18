@@ -8,12 +8,15 @@ const ocultarLoading = () => { body.classList.add('loaded') }
 
 
 //estudiantes de DB le pide al LocalStorage los items que me de 'estudiantes'.
-export let estudiantesExistentes = JSON.parse(localStorage.getItem( 'estudiantes'));
+export let estudiantesExistentes; //= JSON.parse(localStorage.getItem( 'estudiantes'));
 
 
 document.addEventListener( 'DOMContentLoaded', () =>{
-    console.log(estudiantesExistentes);
-    generarListaEstudiantes(estudiantesExistentes)
+    //console.log(estudiantesExistentes);
+    setTimeout(() => {
+        estudiantesExistentes = JSON.parse(localStorage.getItem( 'estudiantes'));
+        generarListaEstudiantes(estudiantesExistentes);
+    }, 3000);
 })
 
 export const generarListaEstudiantes = ( estudiantes) => {
@@ -21,7 +24,7 @@ export const generarListaEstudiantes = ( estudiantes) => {
     console.log('inicioTiempo');
     console.log(estudiantes);
     //mostrarLoading();
-    setTimeout(() => {
+    //setTimeout(() => {
         estudiantes.forEach( estudiante => {
             let renglon = document.createElement( 'tr');
             
@@ -40,7 +43,7 @@ export const generarListaEstudiantes = ( estudiantes) => {
     });
     console.log('fin tiempo');
     //ocultarLoading();
-    }, 3000); 
+    //}, 3000); 
 };
 
 
