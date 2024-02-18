@@ -23,16 +23,6 @@ fetch('../data/data.json')
 
 
 
-//cargo estudiantes en localStorage va a buscar si esta creado. y si no, se crea.
-//JSON.parse( localStorage.getItem( 'estudiantes')) || localStorage.setItem( 'estudiantes', JSON.stringify(estudiantes));
-
-
 //agregar los estudiantes renderizados a la lista de estudiantes existente.
-//const nuevoEstudiante = renderNuevoEstudiante;
-const nuevoEstudiante = EstudianteCreado;
-/* estudiantes.push(nuevoEstudiante); */
 
-/* setTimeout(() => {
-    
-}, 3000); */
-//localStorage.setItem( 'estudiantes', JSON.stringify( estudiantes));
+const nuevoEstudiante = EstudianteCreado;
