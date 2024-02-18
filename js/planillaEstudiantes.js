@@ -1,13 +1,14 @@
 import { estudiantesExistentes } from './inicio.js';
 import { generarListaEstudiantes } from './inicio.js';
-/* import { estudiantes } from '../dbJS/estudiantes.js'; */
+
 
 
 let estudiantesActuales = JSON.parse( localStorage.getItem( 'estudiantes'));
+
+
 //buscador de estudiantes.
 const buscador = document.getElementById( 'buscadorInput');
 //filtrar lista
-//const filtroEstados = document.getElementById( 'dropdownMenuLink')
 const filtProm = document.getElementById( 'filtProm');
 const filtAprov = document.getElementById( 'filtAprov');
 const filtDesap = document.getElementById( 'filtDesap');
@@ -18,7 +19,7 @@ const verificarEstado = ( valorPromedio) => {
         return 'Desaprobado';
     } else if(( valorPromedio >=4) && ( valorPromedio <7)){
         return 'Aprobado';
-    } else if( valorPromedio >7) {
+    } else if( valorPromedio >=7) {
         return 'Promocionado';
     } else {
         return 'Falla en el cálculo del promedio';
@@ -71,7 +72,6 @@ if ( document.getElementById( 'btnModalAddEst')) {
     }
 } 
 
-
 agregaEstudiante.addEventListener('click', (e) => {
     //validar dni.
     const validarDni =(dni) => {
@@ -101,13 +101,20 @@ agregaEstudiante.addEventListener('click', (e) => {
         modalParcial1.value = '';
         modalParcial2.value = '';
         modalParcial3.value = '';
+
+        Toastify({
+            text: "Cargando estudiante...",
+            duration: 3000
+            }).showToast();
+
     } else {
-        textoAlerta.style.display = 'block';
-        //alert("Alguno de todos los campos no es válido.");
+        Swal.fire({
+            title: "Error!",
+            text: "Alguno de los campos no es válido. 1- Verifique que el DNI contenga 6 digitos. 2- Que el nombre esté compuesto por lo menos de 3 letras. 3- Que las notas esten comprendidas en el rango de 1 a 10.",
+            icon: "error"
+        });
     }
-    console.log( agregaEstudiante);
-    console.log( typeof agregaEstudiante);
-    console.log( e);
+
 })
 //fin modal.
 
