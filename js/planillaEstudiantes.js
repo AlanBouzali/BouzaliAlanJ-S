@@ -107,7 +107,7 @@ agregaEstudiante.addEventListener('click', (e) => {
         modalParcial3.value = '';
 
         Toastify({
-            text: "Cargando estudiante...",
+            text: "Estudiante agregado.",
             duration: 2000
             }).showToast();
 
