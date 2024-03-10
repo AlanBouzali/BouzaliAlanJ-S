@@ -1,13 +1,20 @@
 import { estudiantesExistentes } from './inicio.js';
 import { generarListaEstudiantes } from './inicio.js';
+/* import { estudiantes } from '../dbJS/estudiantes.js'; */
 
 console.log('que lee primero?');
 
-let estudiantesActuales = JSON.parse( localStorage.getItem( 'estudiantes'));
+let estudiantesActuales;
+
+setTimeout(() => {
+    estudiantesActuales = JSON.parse( localStorage.getItem( 'estudiantes'));
+}, 3000);
+
+console.log(estudiantesActuales);
+
 //buscador de estudiantes.
 const buscador = document.getElementById( 'buscadorInput');
 //filtrar lista
-//const filtroEstados = document.getElementById( 'dropdownMenuLink')
 const filtProm = document.getElementById( 'filtProm');
 const filtAprov = document.getElementById( 'filtAprov');
 const filtDesap = document.getElementById( 'filtDesap');
@@ -71,7 +78,6 @@ if ( document.getElementById( 'btnModalAddEst')) {
     }
 } 
 
-
 agregaEstudiante.addEventListener('click', (e) => {
     //validar dni.
     const validarDni =(dni) => {
@@ -103,7 +109,7 @@ agregaEstudiante.addEventListener('click', (e) => {
         modalParcial3.value = '';
 
         Toastify({
-            text: "Estudiante cagado.",
+            text: "Estudiante agregado.",
             duration: 2000
             }).showToast();
 

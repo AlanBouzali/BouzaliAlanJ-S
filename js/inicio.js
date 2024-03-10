@@ -7,7 +7,7 @@ const listaEstudiantes = document.getElementById( 'compiladorEstudiantes');//tra
 console.log('que lee primero?');
 
 //estudiantes de DB le pide al LocalStorage los items que me de 'estudiantes'.
-export let estudiantesExistentes = JSON.parse(localStorage.getItem( 'estudiantes'));
+export let estudiantesExistentes; //= JSON.parse(localStorage.getItem( 'estudiantes'));
 
 
 document.addEventListener( 'DOMContentLoaded', () =>{
@@ -33,23 +33,26 @@ const cargarEstudiantesDesdeLocalStorage = () => {
 
 export const generarListaEstudiantes = ( estudiantes) => {
     listaEstudiantes.innerHTML = '';
-    estudiantes.forEach( estudiante => {
-        let renglon = document.createElement( 'tr');
-        
-        renglon.innerHTML = `
-            <th scope="row">${estudiante.id}</th>
-            <td>${estudiante.dni}</td>
-            <td>${estudiante.nombre}</td>
-            <td>${estudiante.nota1}</td>
-            <td>${estudiante.nota2}</td>
-            <td>${estudiante.nota3}</td>
-            <td>${estudiante.promedio}</td>
-            <td>${estudiante.status}</td>
-        `;
+    console.log(estudiantes);
+    //mostrarLoading();
+        estudiantes.forEach( estudiante => {
+            let renglon = document.createElement( 'tr');
+            
+            renglon.innerHTML = `
+                <th scope="row">${estudiante.id}</th>
+                <td>${estudiante.dni}</td>
+                <td>${estudiante.nombre}</td>
+                <td>${estudiante.nota1}</td>
+                <td>${estudiante.nota2}</td>
+                <td>${estudiante.nota3}</td>
+                <td>${estudiante.promedio}</td>
+                <td>${estudiante.status}</td>
+            `;
 
-        listaEstudiantes.appendChild( renglon);
-
+            listaEstudiantes.appendChild( renglon);
     });
+    console.log('fin tiempo');
+    //ocultarLoading(); 
 };
 
 
