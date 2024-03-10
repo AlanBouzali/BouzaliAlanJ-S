@@ -1,13 +1,11 @@
-
-
 export let dBusuarios = [
     {
         id: 1,
-        usuario: "AlanMaster",
-        contrasenia: "123456",
+        user: "AlanMaster",
+        pass: "123456",
         admin: true,
     },
 ];
 
 
-JSON.parse(localStorage.getItem("dBusuarios")) || localStorage.setItem("dBusuarios", JSON.stringify(dBusuarios));
+JSON.parse(localStorage.getItem("usuarios")) || localStorage.setItem("usuarios", JSON.stringify(dBusuarios));

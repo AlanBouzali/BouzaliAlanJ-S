@@ -1,7 +1,7 @@
 import { estudiantesExistentes } from './inicio.js';
 import { generarListaEstudiantes } from './inicio.js';
-/* import { estudiantes } from '../dbJS/estudiantes.js'; */
 
+console.log('que lee primero?');
 
 let estudiantesActuales = JSON.parse( localStorage.getItem( 'estudiantes'));
 //buscador de estudiantes.
@@ -18,7 +18,7 @@ const verificarEstado = ( valorPromedio) => {
         return 'Desaprobado';
     } else if(( valorPromedio >=4) && ( valorPromedio <7)){
         return 'Aprobado';
-    } else if( valorPromedio >7) {
+    } else if( valorPromedio >=7) {
         return 'Promocionado';
     } else {
         return 'Falla en el cálculo del promedio';
@@ -101,13 +101,20 @@ agregaEstudiante.addEventListener('click', (e) => {
         modalParcial1.value = '';
         modalParcial2.value = '';
         modalParcial3.value = '';
+
+        Toastify({
+            text: "Estudiante cagado.",
+            duration: 2000
+            }).showToast();
+
     } else {
-        textoAlerta.style.display = 'block';
-        //alert("Alguno de todos los campos no es válido.");
+        Swal.fire({
+            title: "Error!",
+            text: "Alguno de los campos no es válido. 1- Verifique que el DNI contenga 6 digitos. 2- Que el nombre esté compuesto por lo menos de 3 letras. 3- Que las notas esten comprendidas en el rango de 1 a 10.",
+            icon: "error"
+        });
     }
-    console.log( agregaEstudiante);
-    console.log( typeof agregaEstudiante);
-    console.log( e);
+
 })
 //fin modal.
 
@@ -147,5 +154,5 @@ noFlitro.addEventListener( 'click', (e) => {
 
 
 
-console.log( modalParcial1.value,modalParcial2.value, modalParcial3.value)
+//console.log( modalParcial1.value,modalParcial2.value, modalParcial3.value)
 

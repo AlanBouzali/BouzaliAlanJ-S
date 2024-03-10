@@ -4,18 +4,32 @@ import { estudiantes } from "../dbJS/estudiantes.js";
 const userLogin = document.getElementById( 'userLogin'); //traemos los usuarios
 const listaEstudiantes = document.getElementById( 'compiladorEstudiantes');//traemos los estudiantes a la tabla
 
-
+console.log('que lee primero?');
 
 //estudiantes de DB le pide al LocalStorage los items que me de 'estudiantes'.
 export let estudiantesExistentes = JSON.parse(localStorage.getItem( 'estudiantes'));
 
 
 document.addEventListener( 'DOMContentLoaded', () =>{
-
-    console.log("estoa aon lao est exist dentro de onaaaaaaaaaaaaaaa");
     console.log(estudiantesExistentes);
-    generarListaEstudiantes(estudiantesExistentes)
-})
+    if (estudiantesExistentes === null){
+        cargarEstudiantesDesdeLocalStorage();
+    } else{
+        generarListaEstudiantes(estudiantesExistentes);
+    }
+});
+
+
+const cargarEstudiantesDesdeLocalStorage = () => {
+    estudiantesExistentes = JSON.parse(localStorage.getItem('estudiantes'));
+    
+    if (estudiantesExistentes === null){
+        console.log('no se encontraron estudiantes en el LocalSstorage');
+    } else{
+        generarListaEstudiantes(estudiantesExistentes);
+        console.log(estudiantesExistentes);
+    }
+}
 
 export const generarListaEstudiantes = ( estudiantes) => {
     listaEstudiantes.innerHTML = '';

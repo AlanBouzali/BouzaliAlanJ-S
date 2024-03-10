@@ -12,7 +12,7 @@ export let estudiantes = [
     { id: 6, dni: '196754', nombre: 'Claudio Perez', nota1: 2, nota2: 3, nota3: 5, promedio: 3.33, status: 'Desaprobado'}
 ];
 
-
+console.log('que lee primero?');
 //cargo estudiantes en localStorage va a buscar si esta creado. y si no, se crea.
 JSON.parse( localStorage.getItem( 'estudiantes')) || localStorage.setItem( 'estudiantes', JSON.stringify(estudiantes));
 
