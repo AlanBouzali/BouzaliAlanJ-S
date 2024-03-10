@@ -8,7 +8,6 @@ setTimeout(() => {
     estudiantesActuales = JSON.parse( localStorage.getItem( 'estudiantes'));
 }, 3000);
 
-console.log(estudiantesActuales);
 
 //buscador de estudiantes.
 const buscador = document.getElementById( 'buscadorInput');
@@ -134,7 +133,6 @@ buscador.addEventListener( 'keyup', (e) => {
         estudiantesActuales = JSON.parse( localStorage.getItem( 'estudiantes'));
         generarListaEstudiantes( estudiantesActuales);
     }
-    console.log( buscador);
 })
 
 //filtrar lista.
@@ -155,8 +153,4 @@ noFlitro.addEventListener( 'click', (e) => {
     generarListaEstudiantes( sinFiltro);
 })
 
-
-
-
-console.log( modalParcial1.value,modalParcial2.value, modalParcial3.value)
 

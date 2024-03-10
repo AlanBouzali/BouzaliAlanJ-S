@@ -21,7 +21,6 @@ document.addEventListener( 'DOMContentLoaded', () =>{
 
 export const generarListaEstudiantes = ( estudiantes) => {
     listaEstudiantes.innerHTML = '';
-    console.log(estudiantes);
     //mostrarLoading();
         estudiantes.forEach( estudiante => {
             let renglon = document.createElement( 'tr');
@@ -39,7 +38,6 @@ export const generarListaEstudiantes = ( estudiantes) => {
 
             listaEstudiantes.appendChild( renglon);
     });
-    console.log('fin tiempo');
     //ocultarLoading(); 
 };
 
