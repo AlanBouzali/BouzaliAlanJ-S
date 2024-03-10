@@ -1,20 +1,13 @@
 import { estudiantesExistentes } from './inicio.js';
 import { generarListaEstudiantes } from './inicio.js';
-/* import { estudiantes } from '../dbJS/estudiantes.js'; */
 
 console.log('que lee primero?');
 
-let estudiantesActuales;
-
-setTimeout(() => {
-    estudiantesActuales = JSON.parse( localStorage.getItem( 'estudiantes'));
-}, 3000);
-
-console.log(estudiantesActuales);
-
+let estudiantesActuales = JSON.parse( localStorage.getItem( 'estudiantes'));
 //buscador de estudiantes.
 const buscador = document.getElementById( 'buscadorInput');
 //filtrar lista
+
 const filtProm = document.getElementById( 'filtProm');
 const filtAprov = document.getElementById( 'filtAprov');
 const filtDesap = document.getElementById( 'filtDesap');
